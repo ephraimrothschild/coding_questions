@@ -7,3 +7,4 @@ example_questions/.settings/
 *.classpath
 *.project
 java/.settings/
+java/bin/
