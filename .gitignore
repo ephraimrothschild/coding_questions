@@ -4,3 +4,6 @@ example_questions/.classpath
 example_questions/.project
 example_questions/.settings/
 *.class
+*.classpath
+*.project
+java/.settings/
