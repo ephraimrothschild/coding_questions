@@ -29,7 +29,7 @@ public class RegexMatch {
 		System.out.println(isMatch("aa", "aa") == true);
 		System.out.println(isMatch("aaa", "aa") == false);
 		System.out.println(isMatch("aa", "a*") == true);
-		System.out.println(isMatch("aa", "*") == true);
+		System.out.println(isMatch("aa", ".*a") == true);
 		System.out.println(isMatch("ab", "*") == true);
 		System.out.println(isMatch("ba", "*") == true);
 		System.out.println(isMatch("a", "b*a") == true);
@@ -69,12 +69,12 @@ public class RegexMatch {
 	    	if (regChar == '*') {
 	    		regStack.pop();
 	    		regChar = regStack.pop();
-	    		while (!strStack.empty() && strStack.peek() == regChar)
+	    		while (!strStack.empty() && match(strStack.peek(), regChar))
 	    			strStack.pop();
 	    	}
 	    	
 	    	//If the two characters match, pop them off the stack
-	    	else if (strChar == regChar) {
+	    	else if (match(strChar, regChar)) {
 	    		strStack.pop();
 	    		regStack.pop();
 	    	}
@@ -83,6 +83,11 @@ public class RegexMatch {
 	    	else return false;
 		}
 		return true;
+	}
+	
+	private static boolean match(char c1, char regexChar) {
+		if (regexChar == '.') return true;
+		else return c1 == regexChar;
 	}
 
 }
