@@ -2,7 +2,7 @@ import java.util.Stack;
 
 /**
  * 
- * @author Ephraim
+ * @author Ephraim Rothschild
  * 
  * Question Link: http://www.careercup.com/question?id=5124942133723136
  * Question:
